@@ -33,7 +33,7 @@ nav {
 }
 
 .ham{
-    /*  display: none   */
+    /*  display: none;   */
     cursor: pointer;
     border: none;
     margin: 0;
@@ -69,9 +69,7 @@ nav {
 .menu-links li:hover {
     background-color: mediumslateblue;
 }
-.menu-links.activate {
-    display: flex;
-}
+
 
 /*  *******  RESPONSIVE  MENU   *******    */
 @media (max-width:768px) {
@@ -79,13 +77,21 @@ nav {
         overflow: hidden;
     }
     .logoClass {
-        padding-left: 25px;
+        padding-left: 5px;
+        margin-left: 5px;
+        width: 30px;
+        height: 30px;
     }
+
     .ham {
         display: block;
         position: absolute;
         top: 15px;
         right: 25px;
+        transition: 0.2s 0.1s;
+    }
+    .ham:hover {
+        transform: rotate(360deg);
     }
     nav {
         flex-direction: column;
@@ -101,10 +107,30 @@ nav {
         padding: 0;
         width: 100%;
         display: none;
+        opacity: 0;
     }
     .menu-links li {
         width: 100%;
         text-align: center;
         padding: 20px;
     }
+}
+
+@keyframes showMenu {
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+.menu-links.activate {
+    display: flex;
+    animation: showMenu 500ms ease-in-out both;
+}
+
+.br-1.animated {
+    transform: rotate(-45deg) translate(-10px, 8px);
+}
+.br-2.animated {
+    opacity: 0;
+}
+.br-3.animated {
+    transform: rotate(45deg) translate(-10px, -8px);
 }
