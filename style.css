@@ -19,8 +19,8 @@ body{
 }
 
 .logoClass {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
 
 }
 
@@ -48,4 +48,19 @@ nav {
     width: 28px;
     margin: 10px auto;
     border-radius: 2px;
+}
+.menu-links {
+    display: flex;
+    padding: 0;
+}
+
+.menu-links  li {
+    padding: 0 40px;
+    list-style: none;
+}
+
+.menu-links  li a {
+    text-decoration: none;
+    font-size: 1.8rem;
+    color: #F3F3F3;
 }
