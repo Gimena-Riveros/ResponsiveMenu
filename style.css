@@ -56,11 +56,55 @@ nav {
 
 .menu-links  li {
     padding: 0 40px;
-    list-style: none;
+    list-style-type: none;
+    transition: 0.3s;
 }
 
 .menu-links  li a {
     text-decoration: none;
-    font-size: 1.8rem;
+    font-size: 1.8rem;  /*  equivalente a 18px*/
     color: #F3F3F3;
+    font-weight: 600;
+}
+.menu-links li:hover {
+    background-color: mediumslateblue;
+}
+.menu-links.activate {
+    display: flex;
+}
+
+/*  *******  RESPONSIVE  MENU   *******    */
+@media (max-width:768px) {
+    body {
+        overflow: hidden;
+    }
+    .logoClass {
+        padding-left: 25px;
+    }
+    .ham {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 25px;
+    }
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 25px 0;
+    }
+    .menu-links {
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 92vh;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        display: none;
+    }
+    .menu-links li {
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+    }
 }
